@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Model\Product;
 use Illuminate\Http\Request;
+use App\Http\Resources\Product\ProductResource;
 
 class ProductController extends Controller
 {
@@ -14,7 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+       
     }
 
     /**
@@ -25,7 +26,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -36,7 +37,8 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        $collection = new ProductResource($product);
+        return $collection;
     }
 
     /**
@@ -48,7 +50,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+   
     }
 
     /**
@@ -59,6 +61,6 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+      
     }
 }

@@ -9,6 +9,11 @@ use App\Model\Review;
 class Product extends Model
 {
     public function reviews() {
-        return $this->hasMany(Review::class);
+           return $this->hasMany(Review::class);
     }
+
+    public function getNameAttribute($val) {
+        return ucfirst($val);
+    } 
+
 }
