@@ -26,8 +26,9 @@ class ProductResource extends JsonResource
             ? round($this->reviews->sum('star')/$this->reviews->count(),1) 
              : 'No rating yet.',
             'href' => [
-                'review' => route('reviews.index',$this->id),
-            ],
+                'back' => route('products.index'),
+                'show_review' => route('reviews.index',$this->id)
+            ]
         ];
     }
 }
