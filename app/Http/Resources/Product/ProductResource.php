@@ -17,7 +17,7 @@ class ProductResource extends JsonResource
         // return parent::toArray($request);
         return [
             'name' => $this->name,
-            'detail' => $this->detail,
+            'description' => $this->detail,
             'price' => $this->price,
             'stock' => $this->stock > 0 ? $this->stock : 'Out of stock',
             'discount' => $this->discount,

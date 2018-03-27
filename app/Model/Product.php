@@ -9,7 +9,9 @@ use App\Model\Review;
 
 class Product extends Model
 {
-
+    protected $fillable = [
+        'name', 'description','price','stock','discount'
+    ];
     public function __contruct() {
         $this->middleware('auth:api',['except' => 'index','show']);
     }
