@@ -6,8 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 use App\Model\Review;
 
+
 class Product extends Model
 {
+
+    public function __contruct() {
+        $this->middleware('auth:api',['except' => 'index','show']);
+    }
+
     public function reviews() {
            return $this->hasMany(Review::class);
     }
